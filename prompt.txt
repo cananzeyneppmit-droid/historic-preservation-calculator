@@ -1,0 +1,73 @@
+Generate a browser-based TypeScript calculator using Vite.                                               
+                                                                                                           
+SETUP:                                                                                                     
+- Must run on localhost:5173                                                                               
+- Use dev server with:                                                                                     
+  --port 5173                                                                                              
+  --strictPort                                                                                             
+  --open (auto open browser)                                                                               
+- npm scripts: dev, build, preview                                                                         
+(Vite supports --port, --open, --strictPort flags) :contentReference[oaicite:0]{index=0}                   
+                                                                                                           
+FEATURES:                                                                                                  
+- Basic mode: + - * /                                                                                      
+- Scientific mode: sin, cos, tan, log, power (^), sqrt                                                     
+                                                                                                           
+HISTORIC PRESERVATION TOOLS:                                                                               
+- Restoration cost = area * cost per m²                                                                    
+- Building age = current year - construction year                                                          
+- Conservation zone area (simple geometry or polygon)                                                      
+                                                                                                           
+UI / UX:                                                                                                   
+- Theme: Historic Preservation                                                                             
+- Aged parchment paper texture background                                                                  
+- Subtle grain animation (CSS or canvas REQUIRED)                                                          
+- Elegant serif typography                                                                                 
+- Typewriter-style buttons                                                                                 
+                                                                                                           
+INTERACTION:                                                                                               
+- Play old typewriter key click sound on each button press                                                 
+- Dark / Light mode toggle                                                                                 
+- Switch between Basic and Scientific modes                                                                
+                                                                                                           
+STATE:                                                                                                     
+- Store last 10 calculations                                                                               
+- Click history to reuse results                                                                           
+                                                                                                           
+ERROR HANDLING:                                                                                            
+- Division by zero                                                                                         
+- Invalid input                                                                                            
+- NaN / Infinity                                                                                           
+- Show user-friendly messages                                                                              
+                                                                                                           
+ARCHITECTURE:                                                                                              
+- TypeScript modules:                                                                                      
+  - calculator logic                                                                                       
+  - UI                                                                                                     
+  - utilities                                                                                              
+- Do NOT use eval()                                                                                        
+                                                                                                           
+FILES:                                                                                                     
+- index.html                                                                                               
+- main.ts                                                                                                  
+- calculator.ts                                                                                            
+- styles.css                                                                                               
+- assets (sound + texture)                                                                                 
+                                                                                                           
+OUTPUT:                                                                                                    
+- Full working project                                                                                     
+- Instructions:                                                                                            
+  1. npm install                                                                                           
+  2. npm run dev                                                                                           
+  3. opens automatically at http://localhost:5173
+
+Refactor Vite + React + TS calculator. Don’t rewrite.
+
+- Slow background (20–60s, very subtle noise, no flicker)
+- Fix clear: C=input, AC=reset all → result must clear
+- Global keyboard: 0–9, + - * / ^, Enter, Backspace (all modes)
+- Sound: softer (~0.25 vol, slight pitch), add mute (localStorage), no overlap, no sound if muted/invalid
+- Central state (inputs, result, mode, sound), no stale UI
+
+Constraints: strict TS, modular, no heavy libs  
+Output: only changed files + short notes

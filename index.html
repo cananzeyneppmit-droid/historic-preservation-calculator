@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Historic Preservation Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <div class="parchment-container">
+    <div class="grain-overlay"></div>
+
+    <header class="calculator-header">
+      <h1>Historic Preservation Calculator</h1>
+      <div class="controls">
+        <button id="mute-toggle" class="control-btn" title="Toggle sound">
+          <span class="mute-icon">🔊</span>
+        </button>
+        <button id="theme-toggle" class="control-btn" title="Toggle theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button id="mode-toggle" class="control-btn" title="Toggle mode">
+          <span class="mode-label">Scientific</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="calculator-main">
+      <div class="display-container">
+        <div id="history-display" class="history-display"></div>
+        <div id="main-display" class="main-display">0</div>
+      </div>
+
+      <div id="scientific-panel" class="scientific-panel hidden">
+        <button class="calc-btn sci-btn" data-action="sin">sin</button>
+        <button class="calc-btn sci-btn" data-action="cos">cos</button>
+        <button class="calc-btn sci-btn" data-action="tan">tan</button>
+        <button class="calc-btn sci-btn" data-action="log">log</button>
+        <button class="calc-btn sci-btn" data-action="sqrt">√</button>
+        <button class="calc-btn sci-btn" data-action="power">x^y</button>
+      </div>
+
+      <div class="button-grid">
+        <button class="calc-btn function-btn" data-action="clear-all">AC</button>
+        <button class="calc-btn function-btn" data-action="clear">C</button>
+        <button class="calc-btn function-btn" data-action="backspace">⌫</button>
+        <button class="calc-btn operator-btn" data-action="divide">÷</button>
+
+        <button class="calc-btn number-btn" data-value="7">7</button>
+        <button class="calc-btn number-btn" data-value="8">8</button>
+        <button class="calc-btn number-btn" data-value="9">9</button>
+        <button class="calc-btn operator-btn" data-action="multiply">×</button>
+
+        <button class="calc-btn number-btn" data-value="4">4</button>
+        <button class="calc-btn number-btn" data-value="5">5</button>
+        <button class="calc-btn number-btn" data-value="6">6</button>
+        <button class="calc-btn operator-btn" data-action="subtract">−</button>
+
+        <button class="calc-btn number-btn" data-value="1">1</button>
+        <button class="calc-btn number-btn" data-value="2">2</button>
+        <button class="calc-btn number-btn" data-value="3">3</button>
+        <button class="calc-btn operator-btn" data-action="add">+</button>
+
+        <button class="calc-btn number-btn" data-value="0">0</button>
+        <button class="calc-btn number-btn" data-value="decimal">.</button>
+        <button class="calc-btn function-btn" data-action="negate">±</button>
+        <button class="calc-btn operator-btn" data-action="power">^</button>
+        <button class="calc-btn equals-btn" data-action="equals">=</button>
+      </div>
+
+      <div class="preservation-tools">
+        <h2>Preservation Tools</h2>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <h3>Restoration Cost</h3>
+            <input type="number" id="restoration-area" placeholder="Area (m²)" />
+            <input type="number" id="restoration-cost-per-m2" placeholder="Cost per m²" />
+            <button id="calc-restoration" class="tool-btn">Calculate</button>
+            <div id="restoration-result" class="tool-result"></div>
+          </div>
+
+          <div class="tool-card">
+            <h3>Building Age</h3>
+            <input type="number" id="construction-year" placeholder="Construction Year" />
+            <button id="calc-age" class="tool-btn">Calculate</button>
+            <div id="age-result" class="tool-result"></div>
+          </div>
+
+          <div class="tool-card">
+            <h3>Conservation Zone Area</h3>
+            <select id="zone-shape">
+              <option value="rectangle">Rectangle</option>
+              <option value="triangle">Triangle</option>
+              <option value="circle">Circle</option>
+            </select>
+            <div id="zone-inputs" class="zone-inputs">
+              <input type="number" id="zone-length" placeholder="Length (m)" />
+              <input type="number" id="zone-width" placeholder="Width (m)" />
+            </div>
+            <button id="calc-zone" class="tool-btn">Calculate Area</button>
+            <div id="zone-result" class="tool-result"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="history-panel">
+      <h2>History</h2>
+      <div id="history-list" class="history-list">
+        <p class="empty-history">No calculations yet</p>
+      </div>
+      <button id="clear-history" class="clear-history-btn">Clear History</button>
+    </aside>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
